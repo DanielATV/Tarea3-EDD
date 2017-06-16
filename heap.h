@@ -4,20 +4,20 @@
 #include <stdlib.h>
 
 
-typedef struct elemento{
+typedef struct{
 	int peso;
 	int valor;
 	float proporcion;
 } elemento;
 
-typedef struct heap{
+typedef struct{
 	elemento *arreglo;
 	int tamaño ;
 	int largo;	
 } tColaP;
 
-// inicializa un heap con un tamaño t
-void initColaP (tColaP *P, int t)
+// inicializa un heap como vacío
+tColaP *initColaP (int t)
 // elimina todos los elementos de una cola de prioridad, dejándola vacía
 void clearColaP (tColaP *P);
 // encuentra el máximo elemento del conjunto
