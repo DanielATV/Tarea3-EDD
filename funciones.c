@@ -6,12 +6,13 @@ void clearColaP(tColaP * p){
 }
 
 int sizeColaP(tColaP * p){
-  int i,l,aux;
+  int i;
   i = p ->largo;
   return i;
 }
 
 void insertColaP(tColaP *p,elemento a){
+  int l;
   if (sizeColaP(p) == 0){
     p-> largo ++;
     *(p-> arreglo + sizeColaP(p)) = a;
