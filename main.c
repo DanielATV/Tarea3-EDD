@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "heap.h"
-
+#include "heap.c"
 
 int main(){
 	
-	int num_obj, peso_max, i, peso_aux, valor_aux;
+	int num_obj, peso_max, i,peso_aux, valor_aux;
 
 	
 	printf("Ingrese numero de objetos: ");
@@ -19,6 +19,7 @@ int main(){
 		
 		scanf("%d",&peso_aux);
 		objetos[i].peso = peso_aux;
+		objetos[i].fraccion = 0;
 		
 	}
 	for(i=0; i<num_obj; i++){
@@ -34,13 +35,50 @@ int main(){
 	
 //-------------------
 
-	//Para imprimir datos iniciales
+	//---------------Para imprimir datos iniciales----------------
 	/*
 	for(i=0;i<num_obj;i++){
 		printf("el objeto %d tiene peso %d valor %d y division(valor/peso) %f\n",i,objetos[i].peso,objetos[i].valor,objetos[i].proporcion);
 	}
 	printf("cap_max = %d\n",peso_max);
+	
 	*/
+	//-------------------------------------------------------------
+
+
+	//tColaP *asd = initColaP(t);
+	//int cap_actual = asd.
+	
+
+
+
+/*
+tColaP *cola = initColaP(num_obj);
+int cap_actual=cap_max;
+for(i = 0;i<num_obj;i++)
+{
+	insertarelem(cola, objetos[i]);
+
+}
+while(cap_actual >0)
+{
+	elemento *el = buscarmax(cola);
+	if(cap_actual - el.peso>=0)
+	{
+		el.fraccion = 1;
+		cap_actual  -= el.pesoM
+		eliminarelem(cola,el);
+	}
+	else
+	{
+		el.fraccion = (float)(cap_actual - el.peso)/el.peso;
+		cap_actual = 0;	
+	}
+
+
+}
+
+*/
 
 
 
