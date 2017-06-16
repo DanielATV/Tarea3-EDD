@@ -2,13 +2,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-tColaP *initColap(int t){
+tColaP *initColaP(int t){
 	elemento *tarreglo;
-	tColaP *P;
+	tColaP *P = (tColaP *)malloc(sizeof(tColaP));
 	tarreglo = (elemento *)malloc(sizeof(elemento)*t);
 	P->arreglo = tarreglo;
-	P->tamaño = t;
+	P->maxsize = t;
 	P->largo = 0;
+	return P;
 }
 
 // entrega el maximo del heap
