@@ -7,7 +7,7 @@
 typedef struct elemento{
 	int peso;
 	int valor;
-	int proporcion;
+	float proporcion;
 } elemento;
 
 typedef struct heap{
