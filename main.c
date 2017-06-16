@@ -5,7 +5,7 @@
 
 int main(){
 	
-	int num_obj, peso_max, i;
+	int num_obj, peso_max, i, peso_aux, valor_aux;
 
 	
 	printf("Ingrese numero de objetos: ");
@@ -16,14 +16,14 @@ int main(){
 
 	for(i=0; i<num_obj; i++){
 		printf("Ingrese el peso %d: ",i);
-		int peso_aux;
+		
 		scanf("%d",&peso_aux);
 		objetos[i].peso = peso_aux;
 		
 	}
 	for(i=0; i<num_obj; i++){
 		printf("Ingrese el valor %d: ",i);
-		int valor_aux;
+		
 		scanf("%d",&valor_aux);
 		objetos[i].valor= valor_aux;
 		objetos[i].proporcion =(float)(objetos[i].valor)/objetos[i].peso;
