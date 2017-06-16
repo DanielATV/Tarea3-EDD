@@ -10,3 +10,29 @@ tColaP *initColap(int t){
 	P->tamaño = t;
 	P->largo = 0;
 }
+
+void removeMax(tColaP *P){
+	int i = 1;
+	elemento aux;
+	P->arreglo[1] = P->arreglo[P->largo];
+	P->largo --;
+	while(2*i < P->largo || 2*i+1 < P->largo;){
+		if(P->arreglo[i].proporcion <= P->arreglo[2*i].proporcion || P->arreglo[i].proporcion <= P->arreglo[2*i+1].proporcion){
+			if (P->arreglo[2*i].proporcion <= P->arreglo[2*i+1].proporcion){
+				aux = P->arreglo[1];
+				P->arreglo[i] = P->arreglo[2*i+1];
+				P->arreglo[2*i+1] = P->arreglo[i];
+				i = 2*i+1;
+			}
+			else{
+				aux = P->arreglo[1];
+				P->arreglo[i] = P->arreglo[2*i];
+				P->arreglo[2*i] = P->arreglo[i];
+				i = 2*i;
+			}
+		}
+		else{
+			break;
+		}
+	}
+}
