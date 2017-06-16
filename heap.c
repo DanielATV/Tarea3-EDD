@@ -90,3 +90,20 @@ void insertColaP(tColaP *P,elemento item)
 	
 	}
 }
+void imprimirarbol(tColaP *P)
+{
+	printf("Arbol:\n");
+	int t = 1;
+	//printf("(P:%d,V:%d,p:%f,f:%f)\n",P->arreglo[0].peso,P->arreglo[0].valor,P->arreglo[0].proporcion,P->arreglo[0].fraccion);
+	int aux = 1;
+	while(t<=(P->largo))
+	{
+		while(t<=aux){
+		printf("(P:%d,V:%d,p:%f,f:%f)",P->arreglo[t].peso,P->arreglo[t].valor,P->arreglo[t].proporcion,P->arreglo[t].fraccion);
+		t++;
+		}
+		printf("\n");
+		aux=aux*2;
+	}
+
+}
