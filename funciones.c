@@ -6,7 +6,7 @@ void clearColaP(tColaP * p){
 }
 
 int sizeColaP(tColaP * p){
-  int i,l;
+  int i,l,aux;
   i = p ->largo;
   return i;
 }
@@ -20,7 +20,13 @@ void insertColaP(tColaP *p,elemento a){
     p-> largo ++;
     *(p-> arreglo + sizeColaP(p)) = a;
     l = sizeColaP(p);
-    while(a->proporcion > *(p-> arreglo + l%2)){
+    while(l%2 =! 0){
+      if (a->proporcion > *(p-> arreglo + l%2).proporcion){
+        *(p-> arreglo + l) = *(p-> arreglo + l%2);
+        *(p-> arreglo + l%2) = a;
+        l = l%2;
+      }
+      else break;
     }
   }
   
