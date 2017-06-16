@@ -12,7 +12,7 @@ typedef struct{
 
 typedef struct{
 	elemento *arreglo;
-	int tamaño ;
+	int maxsize;
 	int largo;	
 } tColaP;
 
