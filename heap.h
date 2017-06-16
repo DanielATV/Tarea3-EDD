@@ -16,7 +16,7 @@ typedef struct heap{
 	int largo;	
 } tColaP;
 
-// inicializa un heap como vacío
+// inicializa un heap con un tamaño t
 void initColaP (tColaP *P, int t)
 // elimina todos los elementos de una cola de prioridad, dejándola vacía
 void clearColaP (tColaP *P);
