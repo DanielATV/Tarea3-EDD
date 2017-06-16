@@ -12,5 +12,12 @@ int sizeColaP(tColaP * p){
 }
 
 void insertColaP(tColaP *p,elemento a){
+  if (sizeColaP(p) == 0){
+    p-> largo ++;
+    *(p-> arreglo + sizeColaP(p) = a;
+  }
+  else{
+    
+  }
   
 }
