@@ -11,7 +11,7 @@ typedef struct elemento{
 } elemento;
 
 typedef struct heap{
-	int *arreglo;
+	elemento *arreglo;
 	int tamaño ;
 	int largo;	
 } tColaP;
