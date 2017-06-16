@@ -1,14 +1,16 @@
 #include <stdio.h>
-void clearColaP(tColaP * c){
-  c -> maxsize = 0;
-  c -> largo = 0;
+void clearColaP(tColaP * p){
+  p -> maxsize = 0;
+  p -> largo = 0;
   free((void *)c -> arreglo);
 }
 
-int sizeColaP(tColaP * c){
+int sizeColaP(tColaP * p){
   int i;
   i = c ->largo;
   return i;
 }
 
-insertColaP
+void insertColaP(tColaP *p,elemento a){
+  
+}
