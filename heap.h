@@ -21,7 +21,7 @@ tColaP *initColaP (int t)
 // elimina todos los elementos de una cola de prioridad, dejándola vacía
 void clearColaP (tColaP *P);
 // encuentra el máximo elemento del conjunto
-tipoElem findMax (tColaP *P);
+elemento findMax (tColaP *P);
 // cantidad de elementos en la cola de prioridad
 int sizeColaP (tColaP *P)
 // elimina el máximo elemento del conjunto
