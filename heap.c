@@ -11,6 +11,11 @@ tColaP *initColap(int t){
 	P->largo = 0;
 }
 
+// entrega el maximo del heap
+elemento findMax(tColaP *P){
+	return P->arreglo[1];
+}
+
 void removeMax(tColaP *P){
 	int i = 1;
 	elemento aux;
