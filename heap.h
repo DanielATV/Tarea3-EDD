@@ -8,6 +8,8 @@ typedef struct{
 	int peso;
 	int valor;
 	float proporcion;
+	int pos;
+	float fraccion;
 } elemento;
 
 typedef struct{
