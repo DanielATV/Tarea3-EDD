@@ -40,13 +40,13 @@ void removeMax(tColaP *P){
 	while(2*i < P->largo || 2*i+1 < P->largo){
 		if(P->arreglo[i].proporcion <= P->arreglo[2*i].proporcion || P->arreglo[i].proporcion <= P->arreglo[2*i+1].proporcion){
 			if (P->arreglo[2*i].proporcion <= P->arreglo[2*i+1].proporcion){
-				aux = P->arreglo[1];
+				aux = P->arreglo[i];
 				P->arreglo[i] = P->arreglo[2*i+1];
 				P->arreglo[2*i+1] = aux;
 				i = 2*i+1;
 			}
 			else{
-				aux = P->arreglo[1];
+				aux = P->arreglo[i];
 				P->arreglo[i] = P->arreglo[2*i];
 				P->arreglo[2*i] = aux;
 				i = 2*i;
