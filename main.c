@@ -4,85 +4,73 @@
 #include "heap.c"
 
 int main(){
+	elemento *objetos;
+	int  peso_max, i,peso_aux, valor_aux;
+	tColaP *P;
+	elemento el;
+	long unsigned int num_obj;
+	float frac;
 	
-	int num_obj, peso_max, i,peso_aux, valor_aux;
+	//printf("Ingrese numero de objetos: ");
+	scanf("%lu",&num_obj);
 
 	
-	printf("Ingrese numero de objetos: ");
-	scanf("%d",&num_obj);
-
-	
-	elemento *objetos=(elemento*)malloc(sizeof(elemento)*num_obj);
+	objetos=(elemento*)malloc(sizeof(elemento)*num_obj);
 
 	for(i=0; i<num_obj; i++){
-		printf("Ingrese el peso %d: ",i);
+		//printf("Ingrese el peso %d: ",i);
 		
 		scanf("%d",&peso_aux);
 		objetos[i].peso = peso_aux;
-		objetos[i].fraccion = 0;
+		objetos[i].pos = i;
 		
 	}
 	for(i=0; i<num_obj; i++){
-		printf("Ingrese el valor %d: ",i);
+		//printf("Ingrese el valor %d: ",i);
 		
 		scanf("%d",&valor_aux);
 		objetos[i].valor= valor_aux;
 		objetos[i].proporcion =(float)(objetos[i].valor)/objetos[i].peso;
 		
 	}
-	printf("Ingrese peso maximo: ");
+	//printf("Ingrese peso maximo: ");
 	scanf("%d",&peso_max);
-	
-//-------------------
 
-	//---------------Para imprimir datos iniciales----------------
-	/*
-	for(i=0;i<num_obj;i++){
-		printf("el objeto %d tiene peso %d valor %d y division(valor/peso) %f\n",i,objetos[i].peso,objetos[i].valor,objetos[i].proporcion);
-	}
-	printf("cap_max = %d\n",peso_max);
-	
-	*/
-	//-------------------------------------------------------------
+	P = initColaP(num_obj);
 
+	for(i =0; i <num_obj;i++) insertColaP(P,objetos[i]);	
 
-	
-	
-
-
-
-/*
-tColaP *cola = initColaP(num_obj);
-int cap_actual=cap_max;
-for(i = 0;i<num_obj;i++)
-{
-	insertarelem(cola, objetos[i]);
-
-}
-while(cap_actual >0)
-{
-	elemento *el = buscarmax(cola);
-	if(cap_actual - el.peso>=0)
+	while(peso_max >0)
 	{
-		el.fraccion = 1;
-		cap_actual  -= el.pesoM
-		eliminarelem(cola,el);
+		el = findMax(P);
+		if(peso_max - el.peso>=0)
+		{
+			el.fraccion = 1;
+			peso_max  -= el.peso;
+			
+			objetos[el.pos] = el;
+			removeMax(P);
+		}
+		else
+		{
+			frac = (float)(el.peso - peso_max)/el.peso;
+			el.fraccion =1- frac;
+			el.peso = el.peso * (frac);
+			el.valor = el.valor * (frac);
+			el.proporcion = (float)el.valor/el.peso;
+			peso_max = 0;
+			objetos[el.pos] = el;
+
+			removeMax(P);
+			insertColaP(P,el);
+		}
 	}
-	else
-	{
-		el.fraccion = (float)(cap_actual - el.peso)/el.peso;
-		cap_actual = 0;	
-	}
-
-
-}
-
-*/
 
 
 
-//-------------------
-	
+	for(i =0; i <num_obj;i++) printf("%.6f\n",objetos[i].fraccion);
+
+	//clearColaP(P);
 	free(objetos);
 	
 	return 0;
