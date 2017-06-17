@@ -5,10 +5,10 @@
 
 int main(){
 	elemento *objetos;
-	int  peso_max, i,peso_aux, valor_aux;
+	int  peso_max, peso_aux, valor_aux;
 	tColaP *P;
 	elemento el;
-	long unsigned int num_obj;
+	long unsigned int num_obj, i;
 	float frac;
 	
 	//printf("Ingrese numero de objetos: ");
