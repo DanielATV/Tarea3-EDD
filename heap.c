@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-tColaP *initColaP(int t){
+tColaP *initColaP(long unsigned int t){
 	elemento *tarreglo;
 	tColaP *P = (tColaP *)malloc(sizeof(tColaP));
 	tarreglo = (elemento *)malloc(sizeof(elemento)*t);
@@ -23,8 +23,8 @@ elemento findMax(tColaP *P){
 	return P->arreglo[1];
 }
 
-int sizeColaP(tColaP * p){
-  int i;
+long unsigned int sizeColaP(tColaP * p){
+  long unsigned int i;
   i = p ->largo;
   return i;
 }
@@ -90,6 +90,7 @@ void insertColaP(tColaP *P,elemento item)
 	
 	}
 }
+/*
 void imprimirarbol(tColaP *P)
 {
 	printf("Arbol:\n");
@@ -107,3 +108,4 @@ void imprimirarbol(tColaP *P)
 	}
 
 }
+*/
