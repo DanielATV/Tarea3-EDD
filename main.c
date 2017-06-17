@@ -8,6 +8,7 @@ int main(){
 	tColaP *P;
 	elemento el;
 	long unsigned int num_obj;
+	float frac;
 	
 	printf("Ingrese numero de objetos: ");
 	scanf("%d",&num_obj);
