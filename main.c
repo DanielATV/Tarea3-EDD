@@ -10,8 +10,8 @@ int main(){
 	long unsigned int num_obj;
 	float frac;
 	
-	printf("Ingrese numero de objetos: ");
-	scanf("%d",&num_obj);
+	//printf("Ingrese numero de objetos: ");
+	scanf("%lu",&num_obj);
 
 	
 	objetos=(elemento*)malloc(sizeof(elemento)*num_obj);
@@ -21,6 +21,7 @@ int main(){
 		
 		scanf("%d",&peso_aux);
 		objetos[i].peso = peso_aux;
+		objetos[i].pos = i;
 		
 	}
 	for(i=0; i<num_obj; i++){
@@ -31,7 +32,7 @@ int main(){
 		objetos[i].proporcion =(float)(objetos[i].valor)/objetos[i].peso;
 		
 	}
-	printf("Ingrese peso maximo: ");
+	//printf("Ingrese peso maximo: ");
 	scanf("%d",&peso_max);
 
 	P = initColaP(num_obj);
@@ -45,6 +46,8 @@ int main(){
 		{
 			el.fraccion = 1;
 			peso_max  -= el.peso;
+			
+			objetos[el.pos] = el;
 			removeMax(P);
 		}
 		else
@@ -55,6 +58,8 @@ int main(){
 			el.valor = el.valor * (frac);
 			el.proporcion = (float)el.valor/el.peso;
 			peso_max = 0;
+			objetos[el.pos] = el;
+
 			removeMax(P);
 			insertColaP(P,el);
 		}
