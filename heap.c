@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-tColaP *initColaP(int t){
+tColaP *initColaP(long unsigned int t){
 	elemento *tarreglo;
 	tColaP *P = (tColaP *)malloc(sizeof(tColaP));
 	tarreglo = (elemento *)malloc(sizeof(elemento)*t);
@@ -23,14 +23,14 @@ elemento findMax(tColaP *P){
 	return P->arreglo[1];
 }
 
-int sizeColaP(tColaP * p){
-  int i;
+long unsigned int sizeColaP(tColaP * p){
+  long unsigned int i;
   i = p ->largo;
   return i;
 }
 
 void removeMax(tColaP *P){
-	int i;
+	long unsigned int i;
 	elemento aux;
 
 	i = 1;
@@ -59,7 +59,7 @@ void removeMax(tColaP *P){
 
 void insertColaP(tColaP *P,elemento item)
 {
-	int i, l;
+	long unsigned int i, l;
 	elemento aux;
 
 	l=P->largo;
@@ -74,9 +74,10 @@ void insertColaP(tColaP *P,elemento item)
 		P->largo++;		
 		l++;
 		P->arreglo[l]=item;
-
+		//printf("metio : %lu\n",l);
 		for (i=l;i/2 > 0;i=i/2)
 		{
+			//printf("cambio : %lu\n",i);
 			if(P->arreglo[i].proporcion >= P->arreglo[i/2].proporcion)
 			{
 				aux=P->arreglo[i/2];
@@ -90,6 +91,7 @@ void insertColaP(tColaP *P,elemento item)
 	
 	}
 }
+/*
 void imprimirarbol(tColaP *P)
 {
 	printf("Arbol:\n");
@@ -107,3 +109,4 @@ void imprimirarbol(tColaP *P)
 	}
 
 }
+*/
