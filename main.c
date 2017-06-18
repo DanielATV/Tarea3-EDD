@@ -5,7 +5,8 @@
 
 int main(){
 	elemento *objetos;
-	int  peso_max, peso_aux, valor_aux;
+	int  peso_aux, valor_aux;
+	long int peso_max;
 	tColaP *P;
 	elemento el;
 	long unsigned int num_obj, i;
@@ -34,14 +35,16 @@ int main(){
 		
 	}
 	//printf("Ingrese peso maximo: ");
-	scanf("%d",&peso_max);
+	scanf("%li",&peso_max);
 
 	P = initColaP(num_obj);
 
 	for(i =0; i <num_obj;i++) insertColaP(P,objetos[i]);	
-
+	
+	//printf("peso_max: %d\n",peso_max);
 	while(peso_max >0)
 	{
+		//printf("peso_max: %d\n",peso_max);
 		el = findMax(P);
 		if(peso_max - el.peso>=0)
 		{
