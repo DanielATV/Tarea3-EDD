@@ -8,22 +8,24 @@ typedef struct{
 	int peso;
 	int valor;
 	float proporcion;
+	long unsigned int pos;
+	float fraccion;
 } elemento;
 
 typedef struct{
 	elemento *arreglo;
-	int maxsize;
-	int largo;	
+	long unsigned int maxsize;
+	long unsigned int largo;	
 } tColaP;
 
 // inicializa un heap como vacío
-tColaP *initColaP (int t);
+tColaP *initColaP (long unsigned int t);
 // elimina todos los elementos de una cola de prioridad, dejándola vacía
 void clearColaP (tColaP *P);
 // encuentra el máximo elemento del conjunto
 elemento findMax (tColaP *P);
 // cantidad de elementos en la cola de prioridad
-int sizeColaP (tColaP *P);
+long unsigned int sizeColaP (tColaP *P);
 // elimina el máximo elemento del conjunto
 void removeMax (tColaP *P);
 // inserta un elemento “item” en la cola de prioridad
