@@ -31,4 +31,3 @@ void removeMax (tColaP *P);
 // inserta un elemento “item” en la cola de prioridad
 void insertColaP (tColaP *P,elemento item);
 #endif
-
