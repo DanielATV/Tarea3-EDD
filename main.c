@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "heap.h"
+#include "heap.c"
 
 int main(){
 	elemento *objetos;
-	int  peso_max, i,peso_aux, valor_aux;
+	int  peso_aux, valor_aux;
+	long int peso_max;
 	tColaP *P;
 	elemento el;
-	long unsigned int num_obj;
+	long unsigned int num_obj, i;
 	float frac;
 	
 	//printf("Ingrese numero de objetos: ");
@@ -33,14 +35,16 @@ int main(){
 		
 	}
 	//printf("Ingrese peso maximo: ");
-	scanf("%d",&peso_max);
+	scanf("%li",&peso_max);
 
 	P = initColaP(num_obj);
 
 	for(i =0; i <num_obj;i++) insertColaP(P,objetos[i]);	
-
+	
+	//printf("peso_max: %d\n",peso_max);
 	while(peso_max >0)
 	{
+		//printf("peso_max: %d\n",peso_max);
 		el = findMax(P);
 		if(peso_max - el.peso>=0)
 		{
@@ -69,7 +73,7 @@ int main(){
 
 	for(i =0; i <num_obj;i++) printf("%.6f\n",objetos[i].fraccion);
 
-	//clearColaP(P);
+	clearColaP(P);
 	free(objetos);
 	
 	return 0;
